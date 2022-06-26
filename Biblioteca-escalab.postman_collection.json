@@ -1,0 +1,630 @@
+{
+	"info": {
+		"_postman_id": "3369c991-4623-4030-b139-c17a3d20b8f1",
+		"name": "Biblioteca-escalab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6435598"
+	},
+	"item": [
+		{
+			"name": "autor",
+			"item": [
+				{
+					"name": "registrarAutor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiam9zc2VuaW5vQGdtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTYxOTE4ODgsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6IjcxMjkzMDU4LTk0YjctNDQ0Yi04YTYwLTZhOTYzYTg2NmUzNyIsImNsaWVudF9pZCI6ImNvZGVtZWRpYXBwIn0.nsPz9h3rOvmqIfOwP3i83brXl_5AUSi-ILSwzoKFJHY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreAutor\":\"Pedro\",\r\n    \"apellidoAutor\":\"Almendari\",\r\n    \"genero\":{\r\n        \"codigoGenero\": 1,\r\n        \"genero\":\"CIENCIA FICCIÓN\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarAutor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/autor/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modificarAutor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigoAutor\":1,\r\n    \"nombreAutor\":\"Julio\",\r\n    \"apellidoAutor\":\"Aparicio\",\r\n    \"genero\":{\r\n        \"codigoGenero\": 1,\r\n        \"genero\":\"CIENCIA FICCIÓN\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarAutor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/autor/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "libro",
+			"item": [
+				{
+					"name": "registrarLibros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiY2FybG9zLmxlbXVzQGdtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTYyMDA3MDUsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6ImVkZWFkNGJmLTA4OWItNDRiNC04ZTNlLTY0ZmRlMWViOTMzOSIsImNsaWVudF9pZCI6ImNvZGVtZWRpYXBwIn0.Iqoy0iYFMRFol6-Lb2VpBjJ5Jl_qn3Y4fQ8zwmnntP0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreLibro\": \"El libro de hoy\",\r\n    \"stock\" : 100,\r\n    \"autores\" : [\r\n        {\r\n            \"codigoAutor\" : 1\r\n        },\r\n         {\r\n            \"codigoAutor\" : 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/libro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"libro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarLibro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiY2FybG9zLmxlbXVzQGdtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTYyMDY1ODMsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6IjA3NmFmNGE5LTkwNTYtNDI1YS04MWU0LTA2MzcxNzQ1N2Q5ZiIsImNsaWVudF9pZCI6ImNvZGVtZWRpYXBwIn0.aiX-CqsWzwnIBfPsuAZknb3CITmutbjYAzOeNK96OxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/libro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"libro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modificarLibro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiY2FybG9zLmxlbXVzQGdtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTYyMDY1ODMsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6IjA3NmFmNGE5LTkwNTYtNDI1YS04MWU0LTA2MzcxNzQ1N2Q5ZiIsImNsaWVudF9pZCI6ImNvZGVtZWRpYXBwIn0.aiX-CqsWzwnIBfPsuAZknb3CITmutbjYAzOeNK96OxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigoLibro\": 5,\r\n    \"nombreLibro\": \"El libro de mañana\",\r\n    \"stock\" : 100,\r\n    \"autores\" : [\r\n        {\r\n            \"codigoAutor\" : 1\r\n        },\r\n         {\r\n            \"codigoAutor\" : 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/libro/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"libro",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarLibro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiY2FybG9zLmxlbXVzQGdtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTYyMDY1ODMsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6IjA3NmFmNGE5LTkwNTYtNDI1YS04MWU0LTA2MzcxNzQ1N2Q5ZiIsImNsaWVudF9pZCI6ImNvZGVtZWRpYXBwIn0.aiX-CqsWzwnIBfPsuAZknb3CITmutbjYAzOeNK96OxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/libro/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"libro",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "prestamo",
+			"item": [
+				{
+					"name": "registrarPrestamo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"fechaPrestamo\":\"2022-05-27 14:30\",\r\n   \"estudiante\": {\r\n                  \"codigoEstudiante\":1,\r\n                  \"nombreEstudiante\":\"Carlos Enrique\",\r\n                  \"apellidoEstudiante\":\"Lemus\" \r\n                },\r\n    \"lstDetallePrestamoLibros\":[\r\n        {\r\n            \"libro\": {\r\n                \"codigoLibro\": 1,\r\n                \"nombreLibro\": \"Codigo Limpio\",\r\n                \"stock\": 20,\r\n                \"autores\":null\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/prestamo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prestamo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LibrosPrestadosByEstudiante",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prestamo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prestamo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "genero",
+			"item": [
+				{
+					"name": "registrarGenero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiY2FybG9zLmxlbXVzQGdtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTYyMDY1ODMsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6IjA3NmFmNGE5LTkwNTYtNDI1YS04MWU0LTA2MzcxNzQ1N2Q5ZiIsImNsaWVudF9pZCI6ImNvZGVtZWRpYXBwIn0.aiX-CqsWzwnIBfPsuAZknb3CITmutbjYAzOeNK96OxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"genero\":\"Novela\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/genero",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarGenero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiY2FybG9zLmxlbXVzQGdtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTYyMDY1ODMsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6IjA3NmFmNGE5LTkwNTYtNDI1YS04MWU0LTA2MzcxNzQ1N2Q5ZiIsImNsaWVudF9pZCI6ImNvZGVtZWRpYXBwIn0.aiX-CqsWzwnIBfPsuAZknb3CITmutbjYAzOeNK96OxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/genero/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genero",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modificarGenero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiY2FybG9zLmxlbXVzQGdtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTYyMDY1ODMsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6IjA3NmFmNGE5LTkwNTYtNDI1YS04MWU0LTA2MzcxNzQ1N2Q5ZiIsImNsaWVudF9pZCI6ImNvZGVtZWRpYXBwIn0.aiX-CqsWzwnIBfPsuAZknb3CITmutbjYAzOeNK96OxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigoGenero\": 2,\r\n    \"genero\": \"Novela Romantica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/genero/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genero",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarGenero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY29kZXJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiY2FybG9zLmxlbXVzQGdtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTYyMDY1ODMsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6IjA3NmFmNGE5LTkwNTYtNDI1YS04MWU0LTA2MzcxNzQ1N2Q5ZiIsImNsaWVudF9pZCI6ImNvZGVtZWRpYXBwIn0.aiX-CqsWzwnIBfPsuAZknb3CITmutbjYAzOeNK96OxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/genero/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genero",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "estudiante",
+			"item": [
+				{
+					"name": "registrarEstudiante",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreAutor\":\"Pedro\",\r\n    \"apellidoAutor\":\"Almendari\",\r\n    \"genero\":{\r\n        \"codigoGenero\": 1,\r\n        \"genero\":\"CIENCIA FICCIÓN\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarEstudiante",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/autor/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modificarEstudiante",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigoAutor\":1,\r\n    \"nombreAutor\":\"Julio\",\r\n    \"apellidoAutor\":\"Berne\",\r\n    \"genero\":{\r\n        \"codigoGenero\": 1,\r\n        \"genero\":\"CIENCIA FICCIÓN\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/autor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarEstudiante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/autor/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"access_token\", data.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "code89codex",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "codemediapp",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "carlos.lemus@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
